@@ -5,7 +5,7 @@ datetime<-as.POSIXct(strptime(paste(data[,1], data[,2], sep=","), "%d/%m/%Y,%H:%
 data <- cbind(datetime, data)
 neededData <- data[which(data$datetime > as.POSIXct("2007-02-01") & data$datetime < as.POSIXct("2007-02-03")),]
 
-png("figures/plot4.png", width=480, height=480)
+png("plot4.png", width=480, height=480)
 par(mfrow = c(2,2), mai = c(0.25, 1, 1.2, 0.7))
 with (neededData, {
     plot(datetime,as.numeric(as.character(Global_active_power)), type="l", ylab="Global Active Power", xlab="")
